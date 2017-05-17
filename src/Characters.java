@@ -1,7 +1,29 @@
+public class dice{
+	
+	private int dNum = 0 ;
+	private int CurNum = 0;
+
+	
+	public dice() {
+		int DiceNum = dNum;
+		
+		//work in progress
+	}
+	
+	private int roll(int rollNum){
+		return (int)(Math.random() * (rollNum + 1) );
+	}
+	 
+	
+	
+	
+	
+}
+
 
 public class Characters {
 	
-	private String charName = "";
+	private String charName = " ";
 	private int HealthNum = 0;
 	private int ManaNum = 0;
 	private String[] CharList = new String [5];
