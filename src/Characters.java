@@ -53,10 +53,14 @@ public class Characters {
 			arrNum++;
 			
 		}
+		else{
+			arrNum = 0;
+			ListNum = 0;
+		}
 		
 	}
 	private String listStats(int arrayNum){
-		return CharList[arrayNum] + HealthList[arrayNum] + ManaList[arrayNum];
+		return CharList[arrayNum] + " " + HealthList[arrayNum] + " "  +  ManaList[arrayNum];
 	}
 	
 	public void WrittingtoFile() {
