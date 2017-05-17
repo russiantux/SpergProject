@@ -11,7 +11,9 @@ public class dice{
 	}
 	
 	private int roll(int rollNum){
+		
 		return (int)(Math.random() * (rollNum + 1) );
+		
 	}
 	 
 	
