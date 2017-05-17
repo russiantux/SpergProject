@@ -1,4 +1,4 @@
-public class dice{
+class dice {
 	
 	private int dNum = 0 ;
 	private int CurNum = 0;
