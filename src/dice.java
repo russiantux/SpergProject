@@ -8,9 +8,12 @@ public class dice {
 	public dice(int numSides, int numD) {
 		numSides = dNumSides;
 		numD = dNum;
-		
-		//work in progress
+		}
+	public dice(int numSides){
+		numSides = dNumsides;
 	}
+	
+	dice d2 = new dice(2);
 	
 	private int roll(int rollNum){
 		
