@@ -1,12 +1,13 @@
 
 public class dice {
 	//
-	private int dNum = 0 ;
-	private int CurNum = 0;
+	private int dNumSides;
+	private int dNum;
 
 	
-	public dice() {
-		int DiceNum = dNum;
+	public dice(int numSides, int numD) {
+		int numSides = dNumSides;
+		int numD = dNum;
 		
 		//work in progress
 	}
