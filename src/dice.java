@@ -6,16 +6,17 @@ public class dice {
 
 	
 	public dice(int numSides, int numD) {
+		//Lets the number of sides on dice and the number of dice vary
 		numSides = dNumSides;
 		numD = dNum;
 		}
 	public dice(int numSides){
-		numSides = dNumsides;
+		numSides = dNumSides;
 	}
 	
 	dice d2 = new dice(2);
 	
-	private int roll(int rollNum){
+	public int roll(int rollNum){
 		
 		return (int)(Math.random() * (rollNum + 1) );
 		
