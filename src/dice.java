@@ -6,8 +6,8 @@ public class dice {
 
 	
 	public dice(int numSides, int numD) {
-		int numSides = dNumSides;
-		int numD = dNum;
+		numSides = dNumSides;
+		numD = dNum;
 		
 		//work in progress
 	}
