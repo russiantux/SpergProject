@@ -15,6 +15,7 @@ public class Characters {
 	private String[] CharList = new String [5];
 	private int[] HealthList = new int [5];
 	private int[] ManaList = new int[5];
+	public char[] listStats;
 	
 	
 	public Characters(){
@@ -24,7 +25,7 @@ public class Characters {
 		
 	}
 	
-	private void addChar(String name, int health, int mana){
+	void addChar(String name, int health, int mana){
 		int arrNum = 1;
 		int ListNum = 0;
 		
