@@ -22,12 +22,14 @@ public class Characters {
 		 CharList[ListNum] = name;
 		 HealthList[ListNum] = health;
 		 ManaList[ListNum] = mana;
+		 ListNum++;
+		 
 			
 		
 		
 	}
 	public String listStats(int arrayNum){
-		return CharList[arrayNum] + " " + HealthList[arrayNum] + " "  +  ManaList[arrayNum];
+		return "Name: " + CharList[arrayNum] + "  |  HP: " + HealthList[arrayNum] + "  |  Mana: "  +  ManaList[arrayNum];
 		
 	}
 	
