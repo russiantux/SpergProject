@@ -1,31 +1,49 @@
 
 
-public class dice {
-	//
-	private int dNumSides;
-	private int dNum = 1;
-
+public class Characters {
 	
-	public dice(int numSides, int numD) {
-		//Lets the number of sides on dice and the number of dice vary. Default is 1 die.
-		numSides = dNumSides;
-		numD = dNum;
+	private String charName = " ";
+	private int HealthNum = 0;
+	private int ManaNum = 0;
+	private String[] CharList = new String [5];
+	private int[] HealthList = new int [5];
+	private int[] ManaList = new int[5];
+	public char[] listStats;
+	
+	
+	public Characters(){
+		String name = charName;
+		int health = HealthNum;
+		int mana = ManaNum;
+		
+	}
+	
+	public void addChar(String name, int health, int mana){
+		int arrNum = 1;
+		int ListNum = 0;
+		
+		if(arrNum > 6)
+		{
+			CharList[ListNum] = name;
+			HealthList[ListNum] = health;
+			ManaList[ListNum] = mana;
+			ListNum++;
+			arrNum++;
+			
 		}
-	public dice(int numSides){
-		numSides = dNumSides;
-	}
-	
-	dice d2 = new dice(2);
-	dice d4 = new dice(4);
-	dice d6 = new dice(6);
-	dice d10 = new dice(10);
-	dice d20 = new dice(20);
-	dice d100 = new dice(100);
-	
-	public int roll(int rollNum){
-		
-		return (int)(Math.random() * (rollNum + 1) );
+		else{
+			arrNum = 0;
+			ListNum = 0;
+		}
 		
 	}
+	public String listStats(int arrayNum){
+		return CharList[arrayNum] + " " + HealthList[arrayNum] + " "  +  ManaList[arrayNum];
+	}
 	
+	public void WrittingtoFile() {
+		
+		
+	}
+
 }
