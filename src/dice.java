@@ -14,6 +14,8 @@ public class dice {
 		numSides = dNumSides;
 	}
 	
+	//establishes subclasses of the dice class so that rolling a different sided die can be done easily.
+	
 	dice d2 = new dice(2);
 	dice d4 = new dice(4);
 	dice d6 = new dice(6);
@@ -21,9 +23,9 @@ public class dice {
 	dice d20 = new dice(20);
 	dice d100 = new dice(100);
 	
-	public int roll(int rollNum){
+	public int roll(int numSides){
 		
-		return (int)(Math.random() * (rollNum + 1) );
+		return (int)(Math.random() * (numSides + 1) );
 		
 	}
 	
