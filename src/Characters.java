@@ -1,11 +1,4 @@
 
-	 
-	
-	
-	
-	
-
-
 
 public class Characters {
 	
@@ -25,7 +18,7 @@ public class Characters {
 		
 	}
 	
-	void addChar(String name, int health, int mana){
+	public void addChar(String name, int health, int mana){
 		int arrNum = 1;
 		int ListNum = 0;
 		
@@ -44,7 +37,7 @@ public class Characters {
 		}
 		
 	}
-	private String listStats(int arrayNum){
+	public String listStats(int arrayNum){
 		return CharList[arrayNum] + " " + HealthList[arrayNum] + " "  +  ManaList[arrayNum];
 	}
 	

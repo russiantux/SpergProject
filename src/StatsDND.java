@@ -8,9 +8,9 @@ public class StatsDND  {
 	public static void main(String[] args) {      
 		Characters test1 = new Characters();
 
-		test1.addChar("test name", 100, 10);
+		test1.addChar("testname", 100, 10);
 		
-		System.out.println(test1.listStats);
+		System.out.print(test1.listStats(1));
 		
 	}
 
