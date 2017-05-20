@@ -33,6 +33,14 @@ public class Characters {
 		
 	}
 	
+	public int getHealth(int arrNum){
+		return HealthList[arrNum];
+	}
+	
+	public String getName(int arNum){
+		return CharList[arNum];
+	}
+	
 	public void WrittingtoFile() {
 		
 		
