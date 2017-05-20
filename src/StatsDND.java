@@ -8,7 +8,7 @@ public class StatsDND  {
 	public static void main(String[] args) {      
 		Characters test1 = new Characters();
 		
-
+		
 		test1.addChar("testname", 100, 10);
 		test1.addChar("test2", 50, 30);
 		test1.addChar("Name test Three to see how far char can go", 1, 100);
