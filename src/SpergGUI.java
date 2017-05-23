@@ -94,17 +94,18 @@ public class SpergGUI {
 		JLabel healCount = new JLabel("$");
 		healCount.setHorizontalAlignment(SwingConstants.CENTER);
 		healCount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healCount.setBounds(487, 87, 32, 16);
+		healCount.setBounds(477, 87, 32, 16);
 		frame.getContentPane().add(healCount);
 		
 		JLabel slashLabel = new JLabel("/ ");
 		slashLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		slashLabel.setBounds(519, 87, 9, 16);
+		slashLabel.setBounds(510, 87, 9, 16);
 		frame.getContentPane().add(slashLabel);
 		
 		JLabel healthTotal = new JLabel("$");
+		healthTotal.setHorizontalAlignment(SwingConstants.CENTER);
 		healthTotal.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healthTotal.setBounds(531, 87, 23, 16);
+		healthTotal.setBounds(515, 87, 41, 16);
 		frame.getContentPane().add(healthTotal);
 		
 		//always on the bottom
@@ -117,6 +118,7 @@ public class SpergGUI {
 				charName1s.setText(testCar.getName(0));
 				progressBar.setValue(testHealth);
 				healthTotal.setText(" " + testCar.getHealth(0));
+				healCount.setText(" " + testHealth);
 				
 			}
 		});

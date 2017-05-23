@@ -18,27 +18,33 @@ public class Characters {
 	
 	public void addChar(String name, int health, int mana){
 	
-		
-		 CharList[ListNum] = name;
-		 HealthList[ListNum] = health;
-		 ManaList[ListNum] = mana;
-		 ListNum++;
-		 
+		if(ListNum == 6){
+			System.out.println("error: CharList maxed out");
+		}
+		else
+		{
+			CharList[ListNum] = name;
+			 HealthList[ListNum] = health;
+			 ManaList[ListNum] = mana;
+			 ListNum++;
 			
-		
-		
+		}
 	}
+	
 	public String listStats(int arrayNum){
 		return "Name: " + CharList[arrayNum] + "  |  HP: " + HealthList[arrayNum] + "  |  Mana: "  +  ManaList[arrayNum];
-		
 	}
 	
 	public int getHealth(int arrNum){
 		return HealthList[arrNum];
 	}
 	
-	public String getName(int arNum){
-		return CharList[arNum];
+	public String getName(int arrNum){
+		return CharList[arrNum];
+	}
+	
+	public int getMana(int arrNum){
+		return ManaList[arrNum];
 	}
 	
 	public void WrittingtoFile() {
