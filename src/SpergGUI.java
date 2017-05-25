@@ -16,6 +16,7 @@ import javax.swing.JProgressBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
+import javax.swing.JRadioButton;
 
 public class SpergGUI {
 
@@ -133,30 +134,17 @@ public class SpergGUI {
 		btnNewButton_1.setBounds(402, 114, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(43, 48, 97, 21);
-		frame.getContentPane().add(menuBar);
+		JRadioButton rdbtnDDie = new JRadioButton("D2 Die");
+		rdbtnDDie.setBounds(27, 137, 109, 23);
+		frame.getContentPane().add(rdbtnDDie);
 		
-		JMenu mnChooseADie = new JMenu("Choose a die!");
-		menuBar.add(mnChooseADie);
+		JRadioButton rdbtnDDie_1 = new JRadioButton("D6 Die");
+		rdbtnDDie_1.setBounds(27, 163, 109, 23);
+		frame.getContentPane().add(rdbtnDDie_1);
 		
-		JMenuItem mntmD = new JMenuItem("D2");
-		mnChooseADie.add(mntmD);
-		
-		JMenuItem mntmD_1 = new JMenuItem("D4");
-		mnChooseADie.add(mntmD_1);
-		
-		JMenuItem mntmD_2 = new JMenuItem("D6");
-		mnChooseADie.add(mntmD_2);
-		
-		JMenuItem mntmD_3 = new JMenuItem("D10");
-		mnChooseADie.add(mntmD_3);
-		
-		JMenuItem mntmD_4 = new JMenuItem("D20");
-		mnChooseADie.add(mntmD_4);
-		
-		JMenuItem mntmD_5 = new JMenuItem("D100");
-		mnChooseADie.add(mntmD_5);
+		JRadioButton rdbtnDDie_2 = new JRadioButton("D20 Die");
+		rdbtnDDie_2.setBounds(27, 189, 109, 23);
+		frame.getContentPane().add(rdbtnDDie_2);
 		
 	
 	
