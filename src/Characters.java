@@ -47,8 +47,16 @@ public class Characters {
 		return ManaList[arrNum];
 	}
 	
+	public void setHealth(int healthNum, int arrNum){
+		HealthList[arrNum] = healthNum;
+	}
+	public void setMana(int manaNum, int arrNum){
+		ManaList[arrNum] = manaNum;
+	}
+	
+	
 	public void WrittingtoFile() {
-		
+		//
 		
 	}
 
