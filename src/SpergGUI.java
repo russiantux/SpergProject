@@ -13,13 +13,15 @@ import javax.swing.Action;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JProgressBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
 
 public class SpergGUI {
 
 	private JFrame frame;
 	private final JButton btnNewButton = new JButton("Roll");
 	private final Action action = new SwingAction();
-	private final JLabel lblNewLabel = new JLabel("D20 Dice Roll");
 	private int testHealth = 0;
 	
 
@@ -74,9 +76,6 @@ public class SpergGUI {
 		});
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(btnNewButton);
-		lblNewLabel.setBounds(43, 25, 93, 16);
-		
-		frame.getContentPane().add(lblNewLabel);
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setValue(10);
@@ -94,18 +93,17 @@ public class SpergGUI {
 		JLabel healCount = new JLabel("$");
 		healCount.setHorizontalAlignment(SwingConstants.CENTER);
 		healCount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healCount.setBounds(477, 87, 32, 16);
+		healCount.setBounds(487, 87, 32, 16);
 		frame.getContentPane().add(healCount);
 		
 		JLabel slashLabel = new JLabel("/ ");
 		slashLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		slashLabel.setBounds(510, 87, 9, 16);
+		slashLabel.setBounds(519, 87, 9, 16);
 		frame.getContentPane().add(slashLabel);
 		
 		JLabel healthTotal = new JLabel("$");
-		healthTotal.setHorizontalAlignment(SwingConstants.CENTER);
 		healthTotal.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healthTotal.setBounds(515, 87, 41, 16);
+		healthTotal.setBounds(531, 87, 23, 16);
 		frame.getContentPane().add(healthTotal);
 		
 		//always on the bottom
@@ -118,7 +116,6 @@ public class SpergGUI {
 				charName1s.setText(testCar.getName(0));
 				progressBar.setValue(testHealth);
 				healthTotal.setText(" " + testCar.getHealth(0));
-				healCount.setText(" " + testHealth);
 				
 			}
 		});
@@ -135,6 +132,31 @@ public class SpergGUI {
 		});
 		btnNewButton_1.setBounds(402, 114, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(43, 48, 97, 21);
+		frame.getContentPane().add(menuBar);
+		
+		JMenu mnChooseADie = new JMenu("Choose a die!");
+		menuBar.add(mnChooseADie);
+		
+		JMenuItem mntmD = new JMenuItem("D2");
+		mnChooseADie.add(mntmD);
+		
+		JMenuItem mntmD_1 = new JMenuItem("D4");
+		mnChooseADie.add(mntmD_1);
+		
+		JMenuItem mntmD_2 = new JMenuItem("D6");
+		mnChooseADie.add(mntmD_2);
+		
+		JMenuItem mntmD_3 = new JMenuItem("D10");
+		mnChooseADie.add(mntmD_3);
+		
+		JMenuItem mntmD_4 = new JMenuItem("D20");
+		mnChooseADie.add(mntmD_4);
+		
+		JMenuItem mntmD_5 = new JMenuItem("D100");
+		mnChooseADie.add(mntmD_5);
 		
 	
 	
