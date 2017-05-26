@@ -120,7 +120,7 @@ public class CharSelection extends JDialog {
                 int hpNum = 0;
                 int manaNum = 0;
                 int testingnum = 0;
-                tstCar.addChar(charName, hpNum, manaNum);
+                tstCar.addChar(charName, hpNum, manaNum, 5);
                 //charTree.add(charTree, new DefaultMutableTreeNode(charName));
                 charList.add(CharName, testingnum);
                 testingnum++;

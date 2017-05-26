@@ -2,6 +2,7 @@
 
 public class Characters {
 	
+
 	private String charName = " ";
 	private int HealthNum = 0;
 	private int ManaNum = 0;
@@ -19,8 +20,10 @@ public class Characters {
 	
 	public void addChar(String name, int health, int mana, int strength){
 	
-		if(ListNum == 6){
-			System.out.println("error: CharList maxed out");
+		if(ListNum == 5){
+			System.out.println("error: CharList maxed out, reseting back to one");
+			ListNum = 0;
+			
 		}
 		else
 		{
