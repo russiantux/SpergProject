@@ -8,6 +8,7 @@ public class Characters {
 	public String[] CharList = new String [5];
 	private int[] HealthList = new int [5];
 	private int[] ManaList = new int[5];
+	private int[] StrengthList = new int[5];
 	public char[] listStats;
 	private int arrNum = 1;
 	private int ListNum = 0;
@@ -16,7 +17,7 @@ public class Characters {
 		
 	}
 	
-	public void addChar(String name, int health, int mana){
+	public void addChar(String name, int health, int mana, int strength){
 	
 		if(ListNum == 6){
 			System.out.println("error: CharList maxed out");
@@ -32,7 +33,7 @@ public class Characters {
 	}
 	
 	public String listStats(int arrayNum){
-		return "Name: " + CharList[arrayNum] + "  |  HP: " + HealthList[arrayNum] + "  |  Mana: "  +  ManaList[arrayNum];
+		return "Name: " + CharList[arrayNum] + "  |  HP: " + HealthList[arrayNum] + "  |  Mana: "  +  ManaList[arrayNum] + "  |  Strength: " + StrengthList[arrayNum];
 	}
 	
 	public int getHealth(int arrNum){
@@ -47,14 +48,27 @@ public class Characters {
 		return ManaList[arrNum];
 	}
 	
+	public int getStrength(int arrNum){
+		return StrengthList[arrNum];
+	}
+	
 	public void setHealth(int healthNum, int arrNum){
 		HealthList[arrNum] = healthNum;
 	}
 	public void setMana(int manaNum, int arrNum){
 		ManaList[arrNum] = manaNum;
 	}
+	public void setStrength(int StrengthNum, int arrNum){
+		StrengthList[arrNum] = StrengthNum;
+	}
 	
-	
+	public int attack(int arrNum)  {
+		
+		
+		HealthList[arrNum] = (HealthList[arrNum] - ((StrengthList[arrNum]) *= 5));
+		return HealthList[arrNum];
+		
+	}
 	public void WrittingtoFile() {
 		//
 		
