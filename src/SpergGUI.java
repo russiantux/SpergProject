@@ -24,6 +24,7 @@ public class SpergGUI {
 	private final JButton btnNewButton = new JButton("Roll");
 	private final Action action = new SwingAction();
 	private int testHealth = 0;
+	private int diceNum = 1;
 	
 
 	/**
@@ -54,13 +55,54 @@ public class SpergGUI {
 	 */
 	private void initialize() {
 		Characters testCar = new Characters();
-		testCar.addChar("testname", 100, 10);
+		testCar.addChar("testname", 100, 10, 5);
 		
 		
 		//
 		frame = new JFrame();
 		frame.setBounds(100, 100, 562, 387);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JRadioButton rdbtnDDie = new JRadioButton("D2 Die");
+		rdbtnDDie.setBounds(27, 137, 109, 23);
+		frame.getContentPane().add(rdbtnDDie);
+		
+		JRadioButton rdbtnDDie_1 = new JRadioButton("D6 Die");
+		rdbtnDDie_1.setBounds(27, 163, 109, 23);
+		frame.getContentPane().add(rdbtnDDie_1);
+		
+		
+		
+		
+		JRadioButton rdbtnDDie_2 = new JRadioButton("D20 Die");
+		rdbtnDDie_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 20;
+				rdbtnDDie_1.setSelected(false);
+				rdbtnDDie.setSelected(false);
+			}
+		});
+		rdbtnDDie_2.setBounds(27, 189, 109, 23);
+		frame.getContentPane().add(rdbtnDDie_2);
+		
+		
+		rdbtnDDie_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 6;
+				rdbtnDDie_2.setSelected(false);
+				rdbtnDDie.setSelected(false);
+			}
+		});
+		
+		rdbtnDDie.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 2;
+				rdbtnDDie_1.setSelected(false);
+				rdbtnDDie_2.setSelected(false);
+			}
+		});
+		
+		
 		
 		final JLabel rollLablel = new JLabel(" ");
 		rollLablel.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
@@ -72,7 +114,7 @@ public class SpergGUI {
 		btnNewButton.setAction(action);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rollLablel.setText(" " + dice.roll(20));
+				rollLablel.setText(" " + dice.roll(diceNum));
 			}
 		});
 		frame.getContentPane().setLayout(null);
@@ -134,17 +176,8 @@ public class SpergGUI {
 		btnNewButton_1.setBounds(402, 114, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JRadioButton rdbtnDDie = new JRadioButton("D2 Die");
-		rdbtnDDie.setBounds(27, 137, 109, 23);
-		frame.getContentPane().add(rdbtnDDie);
 		
-		JRadioButton rdbtnDDie_1 = new JRadioButton("D6 Die");
-		rdbtnDDie_1.setBounds(27, 163, 109, 23);
-		frame.getContentPane().add(rdbtnDDie_1);
-		
-		JRadioButton rdbtnDDie_2 = new JRadioButton("D20 Die");
-		rdbtnDDie_2.setBounds(27, 189, 109, 23);
-		frame.getContentPane().add(rdbtnDDie_2);
+	
 		
 	
 	
