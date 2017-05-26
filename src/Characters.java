@@ -1,4 +1,4 @@
-
+import javax.swing.JOptionPane;
 
 public class Characters {
 	
@@ -12,7 +12,7 @@ public class Characters {
 	private int[] StrengthList = new int[5];
 	public char[] listStats;
 	private int arrNum = 1;
-	private int ListNum = 0;
+	public int ListNum = 0;
 	
 	public Characters(){
 		
@@ -21,6 +21,9 @@ public class Characters {
 	public void addChar(String name, int health, int mana, int strength){
 	
 		if(ListNum == 5){
+			
+			
+			
 			System.out.println("error: CharList maxed out, reseting back to one");
 			ListNum = 0;
 			

@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
@@ -12,6 +13,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -86,12 +88,22 @@ public class CharSelection extends JDialog {
             getContentPane().add(buttonPane, BorderLayout.SOUTH);
             {
                 JButton okButton = new JButton("OK");
+                okButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		dispose();
+                	}
+                });
                 okButton.setActionCommand("OK");
                 buttonPane.add(okButton);
                 getRootPane().setDefaultButton(okButton);
             }
             {
                 JButton cancelButton = new JButton("Cancel");
+                cancelButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		dispose();
+                	}
+                });
                 cancelButton.setActionCommand("Cancel");
                 buttonPane.add(cancelButton);
             }
@@ -117,6 +129,12 @@ public class CharSelection extends JDialog {
         JButton btnNewButton = new JButton("Add");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	if(tstCar.ListNum == 5){
+            		JOptionPane.showMessageDialog(contentPanel,
+        				    "CharList maxed out, reseting back to zero.",
+        				    "ERROR: CharList maxed out.",
+        				    JOptionPane.ERROR_MESSAGE);
+            	}
                 int hpNum = 0;
                 int manaNum = 0;
                 int testingnum = 0;
