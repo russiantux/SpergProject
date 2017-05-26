@@ -176,6 +176,17 @@ public class SpergGUI {
 		btnNewButton_1.setBounds(402, 114, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
+		JButton btnWindow = new JButton("window");
+		btnWindow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CharSelection charDialog = new CharSelection();
+				charDialog.setVisible(true);
+				
+			}
+		});
+		btnWindow.setBounds(19, 319, 117, 29);
+		frame.getContentPane().add(btnWindow);
+		
 		
 	
 		
