@@ -210,7 +210,7 @@ public class SpergGUI {
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Roll");
-			putValue(SHORT_DESCRIPTION, "Some short description");
+			putValue(SHORT_DESCRIPTION, "Roll the dice!");
 		}
 		public void actionPerformed(ActionEvent e) {
 		}
