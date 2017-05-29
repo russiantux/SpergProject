@@ -24,6 +24,11 @@ import javax.swing.JLabel;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
+import javax.swing.ListSelectionModel;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
 
 public class CharSelection extends JDialog {
 
@@ -56,6 +61,9 @@ public class CharSelection extends JDialog {
     	
     	DefaultListModel<String> model = new DefaultListModel<>();
     	 JList<String> list = new JList<>(model);
+    	 list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+    	 list.setVisibleRowCount(6);
+    	 list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     	 
          list.setBounds(228, 11, 196, 207);
          contentPanel.add(list);
