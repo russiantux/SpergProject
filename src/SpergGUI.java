@@ -73,6 +73,10 @@ public class SpergGUI {
 		rdbtnDDie_1.setBounds(27, 163, 109, 23);
 		frmDndStats.getContentPane().add(rdbtnDDie_1);
 		
+		JLabel diceVal = new JLabel("");
+		diceVal.setHorizontalAlignment(SwingConstants.CENTER);
+		diceVal.setBounds(27, 29, 127, 14);
+		frmDndStats.getContentPane().add(diceVal);
 		
 		
 		
@@ -82,6 +86,9 @@ public class SpergGUI {
 				diceNum = 20;
 				rdbtnDDie_1.setSelected(false);
 				rdbtnDDie.setSelected(false);
+				diceVal.setText("D20 Dice");
+				
+				
 			}
 		});
 		rdbtnDDie_2.setBounds(27, 189, 109, 23);
@@ -93,6 +100,7 @@ public class SpergGUI {
 				diceNum = 6;
 				rdbtnDDie_2.setSelected(false);
 				rdbtnDDie.setSelected(false);
+				diceVal.setText("D6 Dice");
 			}
 		});
 		
@@ -101,6 +109,7 @@ public class SpergGUI {
 				diceNum = 2;
 				rdbtnDDie_1.setSelected(false);
 				rdbtnDDie_2.setSelected(false);
+				diceVal.setText("D2 Dice");
 			}
 		});
 		
@@ -188,6 +197,7 @@ public class SpergGUI {
 		});
 		btnWindow.setBounds(19, 319, 117, 29);
 		frmDndStats.getContentPane().add(btnWindow);
+		
 		
 		
 	
