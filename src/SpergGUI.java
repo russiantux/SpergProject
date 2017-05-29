@@ -147,7 +147,7 @@ public class SpergGUI {
 		JLabel healCount = new JLabel("$");
 		healCount.setHorizontalAlignment(SwingConstants.CENTER);
 		healCount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healCount.setBounds(487, 87, 32, 16);
+		healCount.setBounds(487, 85, 32, 16);
 		frmDndStats.getContentPane().add(healCount);
 		
 		JLabel slashLabel = new JLabel("/ ");
