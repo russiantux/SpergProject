@@ -62,7 +62,7 @@ public class SpergGUI {
 		frmDndStats = new JFrame();
 		frmDndStats.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		frmDndStats.setTitle("DnD Stats");
-		frmDndStats.setBounds(100, 100, 562, 387);
+		frmDndStats.setBounds(100, 100, 576, 404);
 		frmDndStats.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JRadioButton rdbtnDDie = new JRadioButton("D2 Die");
