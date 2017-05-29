@@ -152,12 +152,12 @@ public class SpergGUI {
 		
 		JLabel slashLabel = new JLabel("/ ");
 		slashLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		slashLabel.setBounds(519, 87, 9, 16);
+		slashLabel.setBounds(515, 85, 9, 16);
 		frmDndStats.getContentPane().add(slashLabel);
 		
 		JLabel healthTotal = new JLabel("$");
 		healthTotal.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healthTotal.setBounds(531, 87, 23, 16);
+		healthTotal.setBounds(529, 85, 23, 16);
 		frmDndStats.getContentPane().add(healthTotal);
 		
 		//always on the bottom

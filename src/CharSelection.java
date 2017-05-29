@@ -16,10 +16,14 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
+
+import com.sun.xml.internal.bind.v2.model.impl.ModelBuilder;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JLabel;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JCheckBox;
 
 public class CharSelection extends JDialog {
 
@@ -68,7 +72,7 @@ public class CharSelection extends JDialog {
         CharName = new JTextField();
         CharName.setToolTipText("Name");
         CharName.setHorizontalAlignment(SwingConstants.CENTER);
-        CharName.setBounds(6, 35, 130, 26);
+        CharName.setBounds(6, 24, 130, 26);
         contentPanel.add(CharName);
         CharName.setColumns(10);
        
@@ -78,7 +82,7 @@ public class CharSelection extends JDialog {
         HealthInput.setToolTipText("Health");
         HealthInput.setText("1");
         HealthInput.setHorizontalAlignment(SwingConstants.CENTER);
-        HealthInput.setBounds(6, 73, 130, 26);
+        HealthInput.setBounds(6, 61, 130, 26);
         contentPanel.add(HealthInput);
         HealthInput.setColumns(10);
 
@@ -89,7 +93,7 @@ public class CharSelection extends JDialog {
         ManaInput.setToolTipText("Mana");
         ManaInput.setHorizontalAlignment(SwingConstants.CENTER);
         ManaInput.setText("1");
-        ManaInput.setBounds(6, 111, 130, 26);
+        ManaInput.setBounds(6, 98, 130, 26);
         contentPanel.add(ManaInput);
         ManaInput.setColumns(10);
 
@@ -138,6 +142,8 @@ public class CharSelection extends JDialog {
             		
             	
             		
+            	
+            		
             		tstCar.ListNum = 0;
             	}
                 
@@ -163,14 +169,18 @@ public class CharSelection extends JDialog {
         textField = new JTextField();
         textField.setHorizontalAlignment(SwingConstants.CENTER);
         textField.setText("1-10");
-        textField.setBounds(80, 148, 56, 20);
+        textField.setBounds(80, 136, 56, 20);
         contentPanel.add(textField);
         textField.setColumns(10);
         
         JLabel lblStrength = new JLabel("Strength:");
         lblStrength.setHorizontalAlignment(SwingConstants.CENTER);
-        lblStrength.setBounds(6, 148, 84, 20);
+        lblStrength.setBounds(6, 136, 84, 20);
         contentPanel.add(lblStrength);
+        
+        JCheckBox chckbxNewCheckBox = new JCheckBox("Char dead");
+        chckbxNewCheckBox.setBounds(19, 163, 97, 23);
+        contentPanel.add(chckbxNewCheckBox);
         
        
 
