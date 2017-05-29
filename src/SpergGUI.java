@@ -20,7 +20,7 @@ import javax.swing.JRadioButton;
 
 public class SpergGUI {
 
-	private JFrame frame;
+	private JFrame frmDndStats;
 	private final JButton btnNewButton = new JButton("Roll");
 	private final Action action = new SwingAction();
 	private int testHealth = 0;
@@ -35,7 +35,7 @@ public class SpergGUI {
 			public void run() {
 				try {
 					SpergGUI window = new SpergGUI();
-					window.frame.setVisible(true);
+					window.frmDndStats.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,21 +55,23 @@ public class SpergGUI {
 	 */
 	private void initialize() {
 		Characters testCar = new Characters();
-		testCar.addChar("testname", 100, 10, 5);
+		//testCar.addChar("testname", 100, 10, 5);
 		
 		
 		//
-		frame = new JFrame();
-		frame.setBounds(100, 100, 562, 387);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmDndStats = new JFrame();
+		frmDndStats.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		frmDndStats.setTitle("DnD Stats");
+		frmDndStats.setBounds(100, 100, 562, 387);
+		frmDndStats.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JRadioButton rdbtnDDie = new JRadioButton("D2 Die");
 		rdbtnDDie.setBounds(27, 137, 109, 23);
-		frame.getContentPane().add(rdbtnDDie);
+		frmDndStats.getContentPane().add(rdbtnDDie);
 		
 		JRadioButton rdbtnDDie_1 = new JRadioButton("D6 Die");
 		rdbtnDDie_1.setBounds(27, 163, 109, 23);
-		frame.getContentPane().add(rdbtnDDie_1);
+		frmDndStats.getContentPane().add(rdbtnDDie_1);
 		
 		
 		
@@ -83,7 +85,7 @@ public class SpergGUI {
 			}
 		});
 		rdbtnDDie_2.setBounds(27, 189, 109, 23);
-		frame.getContentPane().add(rdbtnDDie_2);
+		frmDndStats.getContentPane().add(rdbtnDDie_2);
 		
 		
 		rdbtnDDie_1.addActionListener(new ActionListener() {
@@ -108,7 +110,7 @@ public class SpergGUI {
 		rollLablel.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
 		rollLablel.setHorizontalAlignment(SwingConstants.CENTER);
 		rollLablel.setBounds(43, 53, 93, 36);
-		frame.getContentPane().add(rollLablel);
+		frmDndStats.getContentPane().add(rollLablel);
 		
 		btnNewButton.setBounds(27, 101, 127, 29);
 		btnNewButton.setAction(action);
@@ -117,37 +119,37 @@ public class SpergGUI {
 				rollLablel.setText(" " + dice.roll(diceNum));
 			}
 		});
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(btnNewButton);
+		frmDndStats.getContentPane().setLayout(null);
+		frmDndStats.getContentPane().add(btnNewButton);
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setValue(10);
 		progressBar.setBounds(392, 69, 146, 20);
-		frame.getContentPane().add(progressBar);
+		frmDndStats.getContentPane().add(progressBar);
 		
 		JLabel charName1s = new JLabel("charName1");
 		charName1s.setBounds(392, 41, 146, 16);
-		frame.getContentPane().add(charName1s);
+		frmDndStats.getContentPane().add(charName1s);
 		
 		JLabel lblNewLabel_2 = new JLabel("HP");
 		lblNewLabel_2.setBounds(392, 86, 61, 16);
-		frame.getContentPane().add(lblNewLabel_2);
+		frmDndStats.getContentPane().add(lblNewLabel_2);
 		
 		JLabel healCount = new JLabel("$");
 		healCount.setHorizontalAlignment(SwingConstants.CENTER);
 		healCount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		healCount.setBounds(487, 87, 32, 16);
-		frame.getContentPane().add(healCount);
+		frmDndStats.getContentPane().add(healCount);
 		
 		JLabel slashLabel = new JLabel("/ ");
 		slashLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		slashLabel.setBounds(519, 87, 9, 16);
-		frame.getContentPane().add(slashLabel);
+		frmDndStats.getContentPane().add(slashLabel);
 		
 		JLabel healthTotal = new JLabel("$");
 		healthTotal.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		healthTotal.setBounds(531, 87, 23, 16);
-		frame.getContentPane().add(healthTotal);
+		frmDndStats.getContentPane().add(healthTotal);
 		
 		//always on the bottom
 		
@@ -163,7 +165,7 @@ public class SpergGUI {
 			}
 		});
 		updateCharButton.setBounds(439, 330, 117, 29);
-		frame.getContentPane().add(updateCharButton);
+		frmDndStats.getContentPane().add(updateCharButton);
 		
 		JButton btnNewButton_1 = new JButton("Damage");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -174,7 +176,7 @@ public class SpergGUI {
 			}
 		});
 		btnNewButton_1.setBounds(402, 114, 117, 29);
-		frame.getContentPane().add(btnNewButton_1);
+		frmDndStats.getContentPane().add(btnNewButton_1);
 		
 		JButton btnWindow = new JButton("window");
 		btnWindow.addActionListener(new ActionListener() {
@@ -185,7 +187,7 @@ public class SpergGUI {
 			}
 		});
 		btnWindow.setBounds(19, 319, 117, 29);
-		frame.getContentPane().add(btnWindow);
+		frmDndStats.getContentPane().add(btnWindow);
 		
 		
 	
