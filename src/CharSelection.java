@@ -11,8 +11,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -39,7 +41,9 @@ public class CharSelection extends JDialog {
     private JTextField HealthInput;
     private JTextField ManaInput;
     private JTextField textField;
-
+    private int charTestNum = 0;
+    
+    
     /**
      * Launch the application.
      */
@@ -60,6 +64,8 @@ public class CharSelection extends JDialog {
   
     
     public CharSelection() {
+    	
+    	
     	
     	DefaultListModel<String> model = new DefaultListModel<>();
     	 JList<String> list = new JList<>(model);
@@ -197,6 +203,42 @@ public class CharSelection extends JDialog {
         });
         btnNewButton.setBounds(6, 189, 130, 29);
         contentPanel.add(btnNewButton);
+        
+        
+        
+        try {
+			Scanner inFile1 = new Scanner(new File("char.txt"));
+			
+		
+			
+			while(inFile1.hasNext()){
+				 
+				
+				
+				
+				if(inFile1.equals(null)){
+					inFile1.nextLine();
+				}
+				else{
+					
+					model.addElement(inFile1.nextLine());
+					charTestNum++;
+				}
+			
+			
+				
+			}
+			
+			
+			
+			
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        
+        
+        
         
         textField = new JTextField();
         textField.setHorizontalAlignment(SwingConstants.CENTER);
