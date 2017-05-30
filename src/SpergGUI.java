@@ -170,7 +170,7 @@ public class SpergGUI {
 			
 				
 				try {
-					Scanner inFile1 = new Scanner(new File("char.txt"));
+					Scanner inFile1 = new Scanner(new File("saves/char.txt"));
 					
 				
 					
