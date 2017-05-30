@@ -85,7 +85,7 @@ public class SpergGUI {
 		frmDndStats.getContentPane().add(diceVal);
 		
 		
-		
+		//If D20 Radio button is selected, max number of sides on the die is 20.
 		JRadioButton rdbtnDDie_2 = new JRadioButton("D20 Die");
 		rdbtnDDie_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -100,7 +100,7 @@ public class SpergGUI {
 		rdbtnDDie_2.setBounds(27, 189, 109, 23);
 		frmDndStats.getContentPane().add(rdbtnDDie_2);
 		
-		
+		//If D6 radio button is selected, max number of sides on the die is 6!
 		rdbtnDDie_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				diceNum = 6;
@@ -110,6 +110,7 @@ public class SpergGUI {
 			}
 		});
 		
+		//If D2 radio button is selected, max number of sides on the die is 2!
 		rdbtnDDie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				diceNum = 2;
@@ -120,7 +121,7 @@ public class SpergGUI {
 		});
 		
 		
-		
+		//Blank number which will display the rolled number from the die after one is obtained.
 		final JLabel rollLablel = new JLabel(" ");
 		rollLablel.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
 		rollLablel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -194,6 +195,7 @@ public class SpergGUI {
 		updateCharButton.setBounds(429, 319, 117, 29);
 		frmDndStats.getContentPane().add(updateCharButton);
 		
+		//When damage button is pressed, an appropriate amount of health is subtracted from the total health.
 		JButton btnNewButton_1 = new JButton("Damage");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -202,10 +204,11 @@ public class SpergGUI {
 				
 			}
 		});
+		
+		//Add a character builder allowing for characters to be made and temporarily stored in the program
 		btnNewButton_1.setBounds(313, 319, 117, 29);
 		frmDndStats.getContentPane().add(btnNewButton_1);
-		
-		JButton btnWindow = new JButton("window");
+		JButton btnWindow = new JButton("Build Char");
 		btnWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CharSelection charDialog = new CharSelection();
@@ -238,6 +241,7 @@ public class SpergGUI {
 		
 	}
 
+	
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Roll");
