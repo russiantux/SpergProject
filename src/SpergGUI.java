@@ -229,6 +229,15 @@ public class SpergGUI {
 		btnWindow.setBounds(10, 319, 117, 29);
 		frmDndStats.getContentPane().add(btnWindow);
 		
+		JLabel strengthVal = new JLabel("");
+		strengthVal.setBounds(396, 201, 127, 48);
+		frmDndStats.getContentPane().add(strengthVal);
+		
+		JLabel lblStrength = new JLabel("Strength:");
+		lblStrength.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblStrength.setBounds(410, 163, 109, 36);
+		frmDndStats.getContentPane().add(lblStrength);
+		
 		
 		
 	
