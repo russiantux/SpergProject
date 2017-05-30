@@ -11,6 +11,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -161,13 +163,35 @@ public class CharSelection extends JDialog {
                 int hpNum = Integer.parseInt(hpText);
                 String charName = CharName.getText().toString();
                 
+              
+                
                 
                 tstCar.addChar(charName, hpNum, manaNum, 5);
                 
              
                 testingnum++;
                 model.addElement(charName);
+                
+                PrintWriter pr;
+				try {
+					pr = new PrintWriter("char.txt");
+					 for (int i=0; i<tstCar.CharList.length ; i++)
+		                {
+		                    pr.println(tstCar.CharList[i]);
+		                }
+		                pr.close();
 
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					
+					JOptionPane.showMessageDialog(contentPanel,
+        				    "error when writing file.",
+        				    "ERROR: CharList maxed out.",
+        				    JOptionPane.ERROR_MESSAGE);
+				}    
+
+               
             }
 
         });

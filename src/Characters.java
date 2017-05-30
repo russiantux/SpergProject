@@ -14,6 +14,7 @@ public class Characters {
 	private int arrNum = 1;
 	public int ListNum = 0;
 	
+	
 	public Characters(){
 		
 	}

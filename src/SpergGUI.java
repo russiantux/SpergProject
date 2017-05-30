@@ -7,6 +7,9 @@ import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -25,6 +28,8 @@ public class SpergGUI {
 	private final Action action = new SwingAction();
 	private int testHealth = 0;
 	private int diceNum = 1;
+	private int arrNums = 0;
+	
 	
 
 	/**
@@ -162,18 +167,44 @@ public class SpergGUI {
 		
 		//always on the bottom
 		
+		
+		
 		JButton updateCharButton = new JButton("Load Char");
 		updateCharButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+			
+				
 				testCar.listStats(0);
 				testHealth = testCar.getHealth(0);
-				charName1s.setText(testCar.getName(0));
+				
 				progressBar.setValue(testHealth);
 				healthTotal.setText(" " + testCar.getHealth(0));
 				
+				try {
+					Scanner inFile1 = new Scanner(new File("char.txt"));
+					
+				
+					
+					while(inFile1.hasNext()){
+						testCar.CharList[arrNums] = inFile1.nextLine();
+						
+						charName1s.setText(testCar.CharList[0]);
+						
+						arrNums++;
+					
+						
+					}
+					arrNums = 0;
+					
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
-		updateCharButton.setBounds(439, 330, 117, 29);
+		updateCharButton.setBounds(429, 319, 117, 29);
 		frmDndStats.getContentPane().add(updateCharButton);
 		
 		JButton btnNewButton_1 = new JButton("Damage");
@@ -195,7 +226,7 @@ public class SpergGUI {
 				
 			}
 		});
-		btnWindow.setBounds(19, 319, 117, 29);
+		btnWindow.setBounds(10, 319, 117, 29);
 		frmDndStats.getContentPane().add(btnWindow);
 		
 		
