@@ -40,7 +40,7 @@ public class CharSelection extends JDialog {
     private JTextField CharName;
     private JTextField HealthInput;
     private JTextField ManaInput;
-    private JTextField textField;
+    private JTextField stengthInput;
     private int charTestNum = 0;
     
     
@@ -98,7 +98,7 @@ public class CharSelection extends JDialog {
         HealthInput.setToolTipText("Health");
         HealthInput.setText("1");
         HealthInput.setHorizontalAlignment(SwingConstants.CENTER);
-        HealthInput.setBounds(6, 61, 130, 26);
+        HealthInput.setBounds(72, 61, 64, 26);
         contentPanel.add(HealthInput);
         HealthInput.setColumns(10);
 
@@ -106,6 +106,7 @@ public class CharSelection extends JDialog {
 
 
         ManaInput = new JTextField();
+        ManaInput.setEnabled(false);
         ManaInput.setToolTipText("Mana");
         ManaInput.setHorizontalAlignment(SwingConstants.CENTER);
         ManaInput.setText("1");
@@ -144,7 +145,26 @@ public class CharSelection extends JDialog {
             }
         }
 
-
+        stengthInput = new JTextField();
+        stengthInput.setToolTipText("1-10");
+        stengthInput.setHorizontalAlignment(SwingConstants.CENTER);
+        stengthInput.setBounds(80, 136, 56, 20);
+        contentPanel.add(stengthInput);
+        stengthInput.setColumns(10);
+        
+        JLabel lblStrength = new JLabel("Strength:");
+        lblStrength.setHorizontalAlignment(SwingConstants.CENTER);
+        lblStrength.setBounds(6, 136, 84, 20);
+        contentPanel.add(lblStrength);
+        
+        JCheckBox chckbxNewCheckBox = new JCheckBox("Char dead");
+        chckbxNewCheckBox.setEnabled(false);
+        chckbxNewCheckBox.setBounds(19, 163, 97, 23);
+        contentPanel.add(chckbxNewCheckBox);
+        
+        JLabel lblHealth = new JLabel("Health:");
+        lblHealth.setBounds(16, 66, 45, 16);
+        contentPanel.add(lblHealth);
         
 
         JButton btnNewButton = new JButton("Add");
@@ -156,10 +176,6 @@ public class CharSelection extends JDialog {
         				    "ERROR: CharList maxed out.",
         				    JOptionPane.ERROR_MESSAGE);
             		
-            	
-            		
-            	
-            		
             		tstCar.ListNum = 0;
             	}
                 
@@ -168,6 +184,10 @@ public class CharSelection extends JDialog {
                 String hpText = HealthInput.getText();
                 int hpNum = Integer.parseInt(hpText);
                 String charName = CharName.getText().toString();
+                
+                String strengthNum = stengthInput.getText().toString();
+                int stengthnum = Integer.parseInt(strengthNum);
+                
                 
               
                 
@@ -180,7 +200,7 @@ public class CharSelection extends JDialog {
                 
                 PrintWriter pr;
 				try {
-					pr = new PrintWriter("char.txt");
+					pr = new PrintWriter("saves/char.txt");
 					 for (int i=0; i<tstCar.CharList.length ; i++)
 		                {
 		                    pr.println(tstCar.CharList[i]);
@@ -196,7 +216,44 @@ public class CharSelection extends JDialog {
         				    "ERROR: CharList maxed out.",
         				    JOptionPane.ERROR_MESSAGE);
 				}    
+				
+				PrintWriter pr1;
+				try {
+					pr1 = new PrintWriter("saves/health.txt");
+					 for (int i=0; i<tstCar.HealthList.length ; i++)
+		                {
+		                    pr1.println(tstCar.HealthList[i]);
+		                }
+		                pr1.close();
 
+				} catch (FileNotFoundException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+					
+					JOptionPane.showMessageDialog(contentPanel,
+        				    "error when writing file.",
+        				    "ERROR: CharList maxed out.",
+        				    JOptionPane.ERROR_MESSAGE);
+				}    
+
+				PrintWriter pr2;
+				try {
+					pr2 = new PrintWriter("saves/strength.txt");
+					 for (int i=0; i<tstCar.StrengthList.length ; i++)
+		                {
+		                    pr2.println(tstCar.StrengthList[i]);
+		                }
+		                pr2.close();
+
+				} catch (FileNotFoundException e3) {
+					// TODO Auto-generated catch blocks
+					e3.printStackTrace();
+					
+					JOptionPane.showMessageDialog(contentPanel,
+        				    "error when writing file.",
+        				    "ERROR: CharList maxed out.",
+        				    JOptionPane.ERROR_MESSAGE);
+				}    
                
             }
 
@@ -240,21 +297,7 @@ public class CharSelection extends JDialog {
         
         
         
-        textField = new JTextField();
-        textField.setHorizontalAlignment(SwingConstants.CENTER);
-        textField.setText("1-10");
-        textField.setBounds(80, 136, 56, 20);
-        contentPanel.add(textField);
-        textField.setColumns(10);
-        
-        JLabel lblStrength = new JLabel("Strength:");
-        lblStrength.setHorizontalAlignment(SwingConstants.CENTER);
-        lblStrength.setBounds(6, 136, 84, 20);
-        contentPanel.add(lblStrength);
-        
-        JCheckBox chckbxNewCheckBox = new JCheckBox("Char dead");
-        chckbxNewCheckBox.setBounds(19, 163, 97, 23);
-        contentPanel.add(chckbxNewCheckBox);
+     
         
        
 

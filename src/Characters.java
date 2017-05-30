@@ -7,9 +7,9 @@ public class Characters {
 	private int HealthNum = 0;
 	private int ManaNum = 0;
 	public String[] CharList = new String [5];
-	private int[] HealthList = new int [5];
+	public int[] HealthList = new int [5];
 	private int[] ManaList = new int[5];
-	private int[] StrengthList = new int[5];
+	public int[] StrengthList = new int[5];
 	public char[] listStats;
 	private int arrNum = 1;
 	public int ListNum = 0;
