@@ -166,7 +166,7 @@ public class SpergGUI {
 				testHealth = testCar.getHealth(0);
 				
 				progressBar.setValue(testHealth);
-				healthTotal.setText(" " + testCar.getHealth(0));
+			
 				
 				try {
 					Scanner inFile1 = new Scanner(new File("char.txt"));
@@ -199,7 +199,7 @@ public class SpergGUI {
 			public void actionPerformed(ActionEvent e) {
 				testHealth -= 1;
 				progressBar.setValue(testHealth);
-				healCount.setText(" " + testHealth);
+				
 			}
 		});
 		btnNewButton_1.setBounds(313, 319, 117, 29);
