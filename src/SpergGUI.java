@@ -20,6 +20,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
 import javax.swing.JRadioButton;
+import java.awt.Color;
 
 public class SpergGUI {
 
@@ -137,33 +138,19 @@ public class SpergGUI {
 		frmDndStats.getContentPane().add(btnNewButton);
 		
 		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBackground(Color.WHITE);
+		progressBar.setForeground(Color.BLACK);
 		progressBar.setValue(10);
-		progressBar.setBounds(392, 69, 146, 20);
+		progressBar.setBounds(392, 29, 146, 3);
 		frmDndStats.getContentPane().add(progressBar);
 		
 		JLabel charName1s = new JLabel("charName1");
-		charName1s.setBounds(392, 41, 146, 16);
+		charName1s.setBounds(392, 6, 146, 16);
 		frmDndStats.getContentPane().add(charName1s);
 		
 		JLabel lblNewLabel_2 = new JLabel("HP");
-		lblNewLabel_2.setBounds(392, 86, 61, 16);
+		lblNewLabel_2.setBounds(374, 24, 17, 14);
 		frmDndStats.getContentPane().add(lblNewLabel_2);
-		
-		JLabel healCount = new JLabel("$");
-		healCount.setHorizontalAlignment(SwingConstants.CENTER);
-		healCount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healCount.setBounds(487, 85, 32, 16);
-		frmDndStats.getContentPane().add(healCount);
-		
-		JLabel slashLabel = new JLabel("/ ");
-		slashLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		slashLabel.setBounds(515, 85, 9, 16);
-		frmDndStats.getContentPane().add(slashLabel);
-		
-		JLabel healthTotal = new JLabel("$");
-		healthTotal.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
-		healthTotal.setBounds(529, 85, 23, 16);
-		frmDndStats.getContentPane().add(healthTotal);
 		
 		//always on the bottom
 		
@@ -215,7 +202,7 @@ public class SpergGUI {
 				healCount.setText(" " + testHealth);
 			}
 		});
-		btnNewButton_1.setBounds(402, 114, 117, 29);
+		btnNewButton_1.setBounds(313, 319, 117, 29);
 		frmDndStats.getContentPane().add(btnNewButton_1);
 		
 		JButton btnWindow = new JButton("window");
@@ -234,9 +221,13 @@ public class SpergGUI {
 		frmDndStats.getContentPane().add(strengthVal);
 		
 		JLabel lblStrength = new JLabel("Strength:");
-		lblStrength.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
-		lblStrength.setBounds(410, 163, 109, 36);
+		lblStrength.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		lblStrength.setBounds(377, 43, 53, 10);
 		frmDndStats.getContentPane().add(lblStrength);
+		
+		JRadioButton radioButton = new JRadioButton("");
+		radioButton.setBounds(340, 20, 141, 23);
+		frmDndStats.getContentPane().add(radioButton);
 		
 		
 		
