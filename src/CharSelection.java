@@ -86,6 +86,7 @@ public class CharSelection extends JDialog {
         contentPanel.setLayout(null);
 
         CharName = new JTextField();
+        CharName.setText("DefaultName");
         CharName.setToolTipText("Name");
         CharName.setHorizontalAlignment(SwingConstants.CENTER);
         CharName.setBounds(6, 24, 130, 26);
@@ -146,6 +147,7 @@ public class CharSelection extends JDialog {
         }
 
         stengthInput = new JTextField();
+        stengthInput.setText("1");
         stengthInput.setToolTipText("1-10");
         stengthInput.setHorizontalAlignment(SwingConstants.CENTER);
         stengthInput.setBounds(80, 136, 56, 20);
@@ -181,6 +183,7 @@ public class CharSelection extends JDialog {
                 
                 int manaNum = 0;
                 int testingnum = 0;
+                boolean dirMake = false;
                 String hpText = HealthInput.getText();
                 int hpNum = Integer.parseInt(hpText);
                 String charName = CharName.getText().toString();
@@ -192,11 +195,16 @@ public class CharSelection extends JDialog {
               
                 
                 
-                tstCar.addChar(charName, hpNum, manaNum, 5);
+                tstCar.addChar(charName, hpNum, 1, stengthnum);
                 
              
                 testingnum++;
                 model.addElement(charName);
+                
+               
+                new File("saves").mkdirs();
+                
+               
                 
                 PrintWriter pr;
 				try {
