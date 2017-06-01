@@ -317,10 +317,20 @@ public class SpergGUI {
 				
 				try {
 					Scanner inFile1 = new Scanner(new File("saves/char.txt"));
+					Scanner inFile2 = new Scanner(new File("saves/health.txt"));
 					
 				
 					
 					while(inFile1.hasNext()){
+						
+						if(inFile2.equals(808))
+						{
+							testCar.CharList[arrNums] = " ";
+							inFile1.nextLine();
+						}
+						else
+						{
+							
 						testCar.CharList[arrNums] = inFile1.nextLine();
 						
 						charName1s.setText(testCar.CharList[0]);
@@ -330,6 +340,7 @@ public class SpergGUI {
 						lblCharname_2.setText(testCar.CharList[4]);
 						
 						arrNums++;
+						}
 					
 						
 					}
