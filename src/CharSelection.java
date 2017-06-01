@@ -73,7 +73,7 @@ public class CharSelection extends JDialog {
     	 list.setVisibleRowCount(6);
     	 list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     	 
-         list.setBounds(228, 11, 196, 207);
+         list.setBounds(228, 11, 200, 185);
          contentPanel.add(list);
     	
     	setTitle("Charcter Selection");
@@ -269,10 +269,28 @@ public class CharSelection extends JDialog {
         btnNewButton.setBounds(6, 189, 130, 29);
         contentPanel.add(btnNewButton);
         
+        JButton btnDelete = new JButton("Delete");
+        btnDelete.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        			int arrIndex = list.getSelectedIndex();
+        			
+        			if(arrIndex != -1){
+        				model.remove(arrIndex);
+        				tstCar.CharList[arrIndex] = "$";
+        				tstCar.HealthList[arrIndex] = 808;
+        				tstCar.StrengthList[arrIndex] = 808;
+        				
+        			}
+        	}
+        });
+        btnDelete.setBounds(344, 204, 84, 29);
+        contentPanel.add(btnDelete);
+        
         
         
         try {
-			Scanner inFile1 = new Scanner(new File("char.txt"));
+			Scanner inFile1 = new Scanner(new File("saves/char.txt"));
+			Scanner inFile2 = new Scanner(new File("saves/health.txt"));
 			
 		
 			
@@ -286,8 +304,14 @@ public class CharSelection extends JDialog {
 				}
 				else{
 					
+					if(inFile2.equals(808)){
+						inFile1.nextLine();
+					}
+					else{
+					
 					model.addElement(inFile1.nextLine());
 					charTestNum++;
+					}
 				}
 			
 			
