@@ -33,6 +33,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
+import java.awt.Toolkit;
+import java.awt.Window.Type;
 
 public class CharSelection extends JDialog {
 
@@ -64,6 +66,7 @@ public class CharSelection extends JDialog {
   
     
     public CharSelection() {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/mac/SpergProject/DnDDice.png"));
     	
     	
     	
@@ -168,6 +171,23 @@ public class CharSelection extends JDialog {
         lblHealth.setBounds(16, 66, 45, 16);
         contentPanel.add(lblHealth);
         
+        
+        JButton btnDelete = new JButton("Delete");
+        btnDelete.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        			int arrIndex = list.getSelectedIndex();
+        			
+        			if(arrIndex != -1){
+        				model.remove(arrIndex);
+        				tstCar.CharList.set(arrIndex, " ");
+        				tstCar.HealthList.set(arrIndex, 1);
+        				tstCar.StrengthList.set(arrIndex, 1);
+        				
+        			}
+        	}
+        });
+        btnDelete.setBounds(344, 204, 84, 29);
+        contentPanel.add(btnDelete);
 
         JButton btnNewButton = new JButton("Add");
         btnNewButton.addActionListener(new ActionListener() {
@@ -209,9 +229,10 @@ public class CharSelection extends JDialog {
                 PrintWriter pr;
 				try {
 					pr = new PrintWriter("saves/char.txt");
-					 for (int i=0; i<tstCar.CharList.length ; i++)
+					 for (int i=0; i<5 ; i++)
 		                {
-		                    pr.println(tstCar.CharList[i]);
+		                    pr.println(tstCar.CharList.get(i));
+		                    
 		                }
 		                pr.close();
 
@@ -228,9 +249,9 @@ public class CharSelection extends JDialog {
 				PrintWriter pr1;
 				try {
 					pr1 = new PrintWriter("saves/health.txt");
-					 for (int i=0; i<tstCar.HealthList.length ; i++)
+					 for (int i=0; i<5 ; i++)
 		                {
-		                    pr1.println(tstCar.HealthList[i]);
+		                    pr1.println(tstCar.HealthList.get(i));
 		                }
 		                pr1.close();
 
@@ -247,9 +268,9 @@ public class CharSelection extends JDialog {
 				PrintWriter pr2;
 				try {
 					pr2 = new PrintWriter("saves/strength.txt");
-					 for (int i=0; i<tstCar.StrengthList.length ; i++)
+					 for (int i=0; i<5 ; i++)
 		                {
-		                    pr2.println(tstCar.StrengthList[i]);
+		                    pr2.println(tstCar.StrengthList.get(i));
 		                }
 		                pr2.close();
 
@@ -269,22 +290,7 @@ public class CharSelection extends JDialog {
         btnNewButton.setBounds(6, 189, 130, 29);
         contentPanel.add(btnNewButton);
         
-        JButton btnDelete = new JButton("Delete");
-        btnDelete.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        			int arrIndex = list.getSelectedIndex();
-        			
-        			if(arrIndex != -1){
-        				model.remove(arrIndex);
-        				tstCar.CharList[arrIndex] = "$";
-        				tstCar.HealthList[arrIndex] = 808;
-        				tstCar.StrengthList[arrIndex] = 808;
-        				
-        			}
-        	}
-        });
-        btnDelete.setBounds(344, 204, 84, 29);
-        contentPanel.add(btnDelete);
+        
         
         
         
@@ -304,7 +310,7 @@ public class CharSelection extends JDialog {
 				}
 				else{
 					
-					if(inFile2.equals(808)){
+					if(inFile1.equals("$")){
 						inFile1.nextLine();
 					}
 					else{

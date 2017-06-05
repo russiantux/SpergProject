@@ -23,6 +23,8 @@ import javax.swing.JRadioButton;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
+import java.awt.Toolkit;
+import java.awt.Dialog.ModalExclusionType;
 
 public class SpergGUI {
 
@@ -32,6 +34,7 @@ public class SpergGUI {
 	private int testHealth = 0;
 	private int diceNum = 1;
 	private int arrNums = 0;
+	private int dotArr = 0;
 	
 	
 
@@ -68,6 +71,7 @@ public class SpergGUI {
 		
 		//
 		frmDndStats = new JFrame();
+		frmDndStats.setIconImage(Toolkit.getDefaultToolkit().getImage("/Users/mac/SpergProject/DnDDice.png"));
 		frmDndStats.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		frmDndStats.setTitle("DnD Stats");
 		frmDndStats.setBounds(100, 100, 576, 404);
@@ -145,25 +149,27 @@ public class SpergGUI {
 		frmDndStats.getContentPane().add(charPanel1);
 		charPanel1.setLayout(null);
 		
-		JRadioButton radioButton = new JRadioButton("");
-		radioButton.setBounds(0, 0, 28, 48);
-		charPanel1.add(radioButton);
+		JRadioButton radioButton1 = new JRadioButton("");
 		
-		JLabel charName1s = new JLabel("charName1");
-		charName1s.setHorizontalAlignment(SwingConstants.CENTER);
-		charName1s.setBounds(31, 0, 146, 16);
-		charPanel1.add(charName1s);
+		
+		radioButton1.setBounds(0, 0, 28, 48);
+		charPanel1.add(radioButton1);
+		
+		JLabel charName1 = new JLabel("charName1");
+		charName1.setHorizontalAlignment(SwingConstants.CENTER);
+		charName1.setBounds(31, 0, 146, 16);
+		charPanel1.add(charName1);
 		
 		JLabel lblNewLabel_2 = new JLabel("HP");
 		lblNewLabel_2.setBounds(29, 17, 17, 25);
 		charPanel1.add(lblNewLabel_2);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(51, 28, 146, 3);
-		charPanel1.add(progressBar);
-		progressBar.setBackground(Color.WHITE);
-		progressBar.setForeground(Color.BLACK);
-		progressBar.setValue(100);
+		JProgressBar progressBar1 = new JProgressBar();
+		progressBar1.setBounds(51, 28, 146, 3);
+		charPanel1.add(progressBar1);
+		progressBar1.setBackground(Color.WHITE);
+		progressBar1.setForeground(Color.BLACK);
+		progressBar1.setValue(100);
 		
 		JLabel lblStrength = new JLabel("Strength:");
 		lblStrength.setBounds(143, 28, 53, 20);
@@ -177,25 +183,25 @@ public class SpergGUI {
 		charPanel2.setBounds(351, 66, 219, 48);
 		frmDndStats.getContentPane().add(charPanel2);
 		
-		JRadioButton radioButton_1 = new JRadioButton("");
-		radioButton_1.setBounds(0, 0, 28, 48);
-		charPanel2.add(radioButton_1);
+		JRadioButton radioButton2 = new JRadioButton("");
+		radioButton2.setBounds(0, 0, 28, 48);
+		charPanel2.add(radioButton2);
 		
-		JLabel charName_2 = new JLabel("charName2");
-		charName_2.setHorizontalAlignment(SwingConstants.CENTER);
-		charName_2.setBounds(31, 0, 146, 16);
-		charPanel2.add(charName_2);
+		JLabel charName2 = new JLabel("charName2");
+		charName2.setHorizontalAlignment(SwingConstants.CENTER);
+		charName2.setBounds(31, 0, 146, 16);
+		charPanel2.add(charName2);
 		
 		JLabel label_1 = new JLabel("HP");
 		label_1.setBounds(29, 17, 17, 25);
 		charPanel2.add(label_1);
 		
-		JProgressBar progressBar_1 = new JProgressBar();
-		progressBar_1.setValue(100);
-		progressBar_1.setForeground(Color.BLACK);
-		progressBar_1.setBackground(Color.WHITE);
-		progressBar_1.setBounds(51, 28, 146, 3);
-		charPanel2.add(progressBar_1);
+		JProgressBar progressBar2 = new JProgressBar();
+		progressBar2.setValue(100);
+		progressBar2.setForeground(Color.BLACK);
+		progressBar2.setBackground(Color.WHITE);
+		progressBar2.setBounds(51, 28, 146, 3);
+		charPanel2.add(progressBar2);
 		
 		JLabel label_2 = new JLabel("Strength:");
 		label_2.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
@@ -208,25 +214,25 @@ public class SpergGUI {
 		charPanel3.setBounds(351, 126, 219, 48);
 		frmDndStats.getContentPane().add(charPanel3);
 		
-		JRadioButton radioButton_2 = new JRadioButton("");
-		radioButton_2.setBounds(0, 0, 28, 48);
-		charPanel3.add(radioButton_2);
+		JRadioButton radioButton3 = new JRadioButton("");
+		radioButton3.setBounds(0, 0, 28, 48);
+		charPanel3.add(radioButton3);
 		
-		JLabel lblCharname = new JLabel("charName3");
-		lblCharname.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCharname.setBounds(31, 0, 146, 16);
-		charPanel3.add(lblCharname);
+		JLabel charName3 = new JLabel("charName3");
+		charName3.setHorizontalAlignment(SwingConstants.CENTER);
+		charName3.setBounds(31, 0, 146, 16);
+		charPanel3.add(charName3);
 		
 		JLabel label_3 = new JLabel("HP");
 		label_3.setBounds(29, 17, 17, 25);
 		charPanel3.add(label_3);
 		
-		JProgressBar progressBar_2 = new JProgressBar();
-		progressBar_2.setValue(100);
-		progressBar_2.setForeground(Color.BLACK);
-		progressBar_2.setBackground(Color.WHITE);
-		progressBar_2.setBounds(51, 28, 146, 3);
-		charPanel3.add(progressBar_2);
+		JProgressBar progressBar3 = new JProgressBar();
+		progressBar3.setValue(100);
+		progressBar3.setForeground(Color.BLACK);
+		progressBar3.setBackground(Color.WHITE);
+		progressBar3.setBounds(51, 28, 146, 3);
+		charPanel3.add(progressBar3);
 		
 		JLabel label_4 = new JLabel("Strength:");
 		label_4.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
@@ -239,25 +245,25 @@ public class SpergGUI {
 		charPanel4.setBounds(351, 189, 219, 48);
 		frmDndStats.getContentPane().add(charPanel4);
 		
-		JRadioButton radioButton_3 = new JRadioButton("");
-		radioButton_3.setBounds(0, 0, 28, 48);
-		charPanel4.add(radioButton_3);
+		JRadioButton radioButton4 = new JRadioButton("");
+		radioButton4.setBounds(0, 0, 28, 48);
+		charPanel4.add(radioButton4);
 		
-		JLabel lblCharname_1 = new JLabel("charName4");
-		lblCharname_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCharname_1.setBounds(31, 0, 146, 16);
-		charPanel4.add(lblCharname_1);
+		JLabel charName4 = new JLabel("charName4");
+		charName4.setHorizontalAlignment(SwingConstants.CENTER);
+		charName4.setBounds(31, 0, 146, 16);
+		charPanel4.add(charName4);
 		
 		JLabel label_5 = new JLabel("HP");
 		label_5.setBounds(29, 17, 17, 25);
 		charPanel4.add(label_5);
 		
-		JProgressBar progressBar_3 = new JProgressBar();
-		progressBar_3.setValue(100);
-		progressBar_3.setForeground(Color.BLACK);
-		progressBar_3.setBackground(Color.WHITE);
-		progressBar_3.setBounds(51, 28, 146, 3);
-		charPanel4.add(progressBar_3);
+		JProgressBar progressBar4 = new JProgressBar();
+		progressBar4.setValue(100);
+		progressBar4.setForeground(Color.BLACK);
+		progressBar4.setBackground(Color.WHITE);
+		progressBar4.setBounds(51, 28, 146, 3);
+		charPanel4.add(progressBar4);
 		
 		JLabel label_6 = new JLabel("Strength:");
 		label_6.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
@@ -270,31 +276,83 @@ public class SpergGUI {
 		charPanel5.setBounds(351, 249, 219, 48);
 		frmDndStats.getContentPane().add(charPanel5);
 		
-		JRadioButton radioButton_4 = new JRadioButton("");
-		radioButton_4.setBounds(0, 0, 28, 48);
-		charPanel5.add(radioButton_4);
+		JRadioButton radioButton5 = new JRadioButton("");
+		radioButton5.setBounds(0, 0, 28, 48);
+		charPanel5.add(radioButton5);
 		
-		JLabel lblCharname_2 = new JLabel("charName5");
-		lblCharname_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCharname_2.setBounds(31, 0, 146, 16);
-		charPanel5.add(lblCharname_2);
+		JLabel charName5 = new JLabel("charName5");
+		charName5.setHorizontalAlignment(SwingConstants.CENTER);
+		charName5.setBounds(31, 0, 146, 16);
+		charPanel5.add(charName5);
 		
 		JLabel label_7 = new JLabel("HP");
 		label_7.setBounds(29, 17, 17, 25);
 		charPanel5.add(label_7);
 		
-		JProgressBar progressBar_4 = new JProgressBar();
-		progressBar_4.setValue(100);
-		progressBar_4.setForeground(Color.BLACK);
-		progressBar_4.setBackground(Color.WHITE);
-		progressBar_4.setBounds(51, 28, 146, 3);
-		charPanel5.add(progressBar_4);
+		JProgressBar progressBar5 = new JProgressBar();
+		progressBar5.setValue(100);
+		progressBar5.setForeground(Color.BLACK);
+		progressBar5.setBackground(Color.WHITE);
+		progressBar5.setBounds(51, 28, 146, 3);
+		charPanel5.add(progressBar5);
 		
 		JLabel label_8 = new JLabel("Strength:");
 		label_8.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		label_8.setBounds(143, 28, 53, 20);
 		charPanel5.add(label_8);
 		
+		
+		//turn system
+		radioButton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				radioButton1.setSelected(true);
+				radioButton2.setSelected(false);
+				radioButton3.setSelected(false);
+				radioButton4.setSelected(false);
+				radioButton5.setSelected(false);
+				dotArr = 0;
+			}
+		});
+		radioButton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				radioButton1.setSelected(false);
+				radioButton2.setSelected(true);
+				radioButton3.setSelected(false);
+				radioButton4.setSelected(false);
+				radioButton5.setSelected(false);
+				dotArr = 1;
+			}
+		});
+		radioButton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				radioButton1.setSelected(false);
+				radioButton2.setSelected(false);
+				radioButton3.setSelected(true);
+				radioButton4.setSelected(false);
+				radioButton5.setSelected(false);
+				dotArr = 2;
+			}
+		});
+		radioButton4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				radioButton1.setSelected(false);
+				radioButton2.setSelected(false);
+				radioButton3.setSelected(false);
+				radioButton4.setSelected(true);
+				radioButton5.setSelected(false);
+				dotArr = 3;
+			}
+		});
+		radioButton5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				radioButton1.setSelected(false);
+				radioButton2.setSelected(false);
+				radioButton3.setSelected(false);
+				radioButton4.setSelected(false);
+				radioButton5.setSelected(true);
+				dotArr = 4;
+			}
+		});
 		
 		
 		
@@ -309,47 +367,92 @@ public class SpergGUI {
 			
 			
 				
-				testCar.listStats(0);
-				testHealth = testCar.getHealth(0);
 				
-				progressBar.setValue(testHealth);
 			
 				
 				try {
 					Scanner inFile1 = new Scanner(new File("saves/char.txt"));
 					Scanner inFile2 = new Scanner(new File("saves/health.txt"));
+					int arrNumss = 0;
+					int arrNumsss = 0;
+					int healthFile = 0;
+					 
+				
+					while(inFile2.hasNext()){
+						//healthFile = Integer.parseInt(inFile2.nextLine());
+						testCar.HealthList.set(arrNumss, Integer.parseInt(inFile2.nextLine()));
+						arrNumsss++;
+						
+					}
+					
+					if(!(testCar.HealthList.get(0) == 1)){
+						progressBar1.setValue((int) testCar.HealthList.get(0));
+						
+					}
+					else
+					{
+						progressBar1.setValue(1);
+					}
+					
+					if(!(testCar.HealthList.get(1) == 1)){
+						progressBar2.setValue((int) testCar.getHealth(1));
+						
+					}
+					else
+					{
+						progressBar2.setValue(0);
+					}
+					
+					if(!(testCar.HealthList.get(2) == 1)){
+						progressBar3.setValue((int) testCar.HealthList.get(2));
+						
+					}
+					else
+					{
+						progressBar3.setValue(0);
+					}
+					
+					if(testCar.HealthList.get(3) == 1){
+						progressBar4.setValue(0);
+					}
+					else
+					{
+					progressBar4.setValue((int) testCar.HealthList.get(3));
+					}
+					
+					if(testCar.HealthList.get(4) == 1){
+						progressBar5.setValue(0);
+					}
+					else
+					{
+					progressBar5.setValue((int) testCar.HealthList.get(4));
+					}
 					
 				
 					
-					while(inFile1.hasNext()){
-						
-						if(inFile2.equals(808))
-						{
-							testCar.CharList[arrNums] = " ";
-							inFile1.nextLine();
-						}
-						else
-						{
-							
-						testCar.CharList[arrNums] = inFile1.nextLine();
-						
-						charName1s.setText(testCar.CharList[0]);
-						charName_2.setText(testCar.CharList[1]);
-						lblCharname.setText(testCar.CharList[2]);
-						lblCharname_1.setText(testCar.CharList[3]);
-						lblCharname_2.setText(testCar.CharList[4]);
-						
-						arrNums++;
-						}
+				
 					
+					
+					
+					while(inFile1.hasNext()){
+				
+						testCar.CharList.set(arrNumss, inFile1.nextLine());
+						arrNumss++;
 						
 					}
-					arrNums = 0;
+						charName1.setText(testCar.getName(0));
+						charName2.setText(testCar.getName(1));
+						charName3.setText(testCar.getName(2));
+						charName4.setText(testCar.getName(3));
+						charName5.setText(testCar.getName(4));
 					
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				
+				
+				
 				
 			}
 		});
@@ -359,8 +462,8 @@ public class SpergGUI {
 		JButton btnNewButton_1 = new JButton("Damage");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				testHealth -= 1;
-				progressBar.setValue(testHealth);
+				testCar.attack(dotArr);
+				progressBar1.setValue(testCar.getHealth(dotArr));
 				
 			}
 		});
