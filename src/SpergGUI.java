@@ -130,10 +130,10 @@ public class SpergGUI {
 		final JLabel rollLablel = new JLabel(" ");
 		rollLablel.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
 		rollLablel.setHorizontalAlignment(SwingConstants.CENTER);
-		rollLablel.setBounds(43, 53, 93, 36);
+		rollLablel.setBounds(62, 50, 109, 39);
 		frmDndStats.getContentPane().add(rollLablel);
 		
-		btnNewButton.setBounds(27, 101, 127, 29);
+		btnNewButton.setBounds(53, 100, 127, 29);
 		btnNewButton.setAction(action);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -484,6 +484,50 @@ public class SpergGUI {
 		JLabel strengthVal = new JLabel("");
 		strengthVal.setBounds(396, 201, 127, 48);
 		frmDndStats.getContentPane().add(strengthVal);
+		
+		//added more dice (d4, d12, d100) as radio buttons
+	
+		
+		JRadioButton rdbtnDDie_3 = new JRadioButton("D4 Die");
+		rdbtnDDie_3.setBounds(138, 137, 109, 23);
+		frmDndStats.getContentPane().add(rdbtnDDie_3);
+		
+		
+		JRadioButton rdbtnDDie_4 = new JRadioButton("D12 Die");
+		rdbtnDDie_4.setBounds(138, 163, 109, 23);
+		frmDndStats.getContentPane().add(rdbtnDDie_4);
+		
+		JRadioButton rdbtnDDie_5 = new JRadioButton("D100 Die");
+		rdbtnDDie_5.setBounds(138, 189, 109, 23);
+		frmDndStats.getContentPane().add(rdbtnDDie_5);
+		
+		rdbtnDDie_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 4;
+				rdbtnDDie_2.setSelected(false);
+				rdbtnDDie.setSelected(false);
+				rdbtnDDie.setSelected(false);
+				diceVal.setText("D4 Dice");
+			}
+		});
+		
+		rdbtnDDie_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 12;
+				rdbtnDDie_2.setSelected(false);
+				rdbtnDDie.setSelected(false);
+				diceVal.setText("D12 Dice");
+			}
+		});
+		
+		rdbtnDDie_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				diceNum = 100;
+				rdbtnDDie_2.setSelected(false);
+				rdbtnDDie.setSelected(false);
+				diceVal.setText("D100  Dice");
+			}
+		});
 		
 		
 		
