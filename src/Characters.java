@@ -8,16 +8,33 @@ public class Characters {
 	private String charName = " ";
 	private int HealthNum = 0;
 	private int ManaNum = 0;
-	public ArrayList<String> CharList = new ArrayList<String>();
-	public ArrayList HealthList = new ArrayList();
+	public ArrayList<String> CharList = new ArrayList<String>(5);
+	public ArrayList<Integer> HealthList = new ArrayList<Integer>(5);
 	private int[] ManaList = new int[5];
-	public ArrayList StrengthList = new ArrayList();
+	public ArrayList<Integer> StrengthList = new ArrayList<Integer>(5);
 	public char[] listStats;
 	private int arrNum = 1;
 	public int ListNum = 0;
 	
 	
 	public Characters(){
+		HealthList.add(0, 0);
+		HealthList.add(1, 0);
+		HealthList.add(2, 0);
+		HealthList.add(3, 0);
+		HealthList.add(4, 0);
+		CharList.add(0, null);
+		CharList.add(1, null);
+		CharList.add(2, null);
+		CharList.add(3, null);
+		CharList.add(4, null);
+		StrengthList.add(0, 1);
+		StrengthList.add(1, 1);
+		StrengthList.add(2, 1);
+		StrengthList.add(3, 1);
+		StrengthList.add(4, 1);
+		
+		
 		
 	}
 	

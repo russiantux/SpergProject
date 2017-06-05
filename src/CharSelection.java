@@ -179,9 +179,9 @@ public class CharSelection extends JDialog {
         			
         			if(arrIndex != -1){
         				model.remove(arrIndex);
-        				tstCar.CharList.set(arrIndex, "$");
-        				tstCar.HealthList.set(arrIndex, 808);
-        				tstCar.StrengthList.set(arrIndex, 808);
+        				tstCar.CharList.set(arrIndex, " ");
+        				tstCar.HealthList.set(arrIndex, 1);
+        				tstCar.StrengthList.set(arrIndex, 1);
         				
         			}
         	}
@@ -229,7 +229,7 @@ public class CharSelection extends JDialog {
                 PrintWriter pr;
 				try {
 					pr = new PrintWriter("saves/char.txt");
-					 for (int i=0; i<4 ; i++)
+					 for (int i=0; i<5 ; i++)
 		                {
 		                    pr.println(tstCar.CharList.get(i));
 		                    
