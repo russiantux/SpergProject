@@ -379,54 +379,12 @@ public class SpergGUI {
 					 
 				
 					while(inFile2.hasNext()){
-						//healthFile = Integer.parseInt(inFile2.nextLine());
-						testCar.HealthList.set(arrNumss, Integer.parseInt(inFile2.nextLine()));
+						healthFile = Integer.parseInt(inFile2.nextLine());
+						testCar.HealthList.set(arrNumss, healthFile);
 						arrNumsss++;
 						
 					}
 					
-					if(!(testCar.HealthList.get(0) == 1)){
-						progressBar1.setValue((int) testCar.HealthList.get(0));
-						
-					}
-					else
-					{
-						progressBar1.setValue(1);
-					}
-					
-					if(!(testCar.HealthList.get(1) == 1)){
-						progressBar2.setValue((int) testCar.getHealth(1));
-						
-					}
-					else
-					{
-						progressBar2.setValue(0);
-					}
-					
-					if(!(testCar.HealthList.get(2) == 1)){
-						progressBar3.setValue((int) testCar.HealthList.get(2));
-						
-					}
-					else
-					{
-						progressBar3.setValue(0);
-					}
-					
-					if(testCar.HealthList.get(3) == 1){
-						progressBar4.setValue(0);
-					}
-					else
-					{
-					progressBar4.setValue((int) testCar.HealthList.get(3));
-					}
-					
-					if(testCar.HealthList.get(4) == 1){
-						progressBar5.setValue(0);
-					}
-					else
-					{
-					progressBar5.setValue((int) testCar.HealthList.get(4));
-					}
 					
 				
 					
@@ -452,10 +410,55 @@ public class SpergGUI {
 				}
 				
 				
+				if(!(testCar.HealthList.get(0) != -1)){
+					progressBar1.setValue((int) testCar.HealthList.get(0));
+					
+				}
+				else
+				{
+					progressBar1.setValue(1);
+				}
+				
+				if(!(testCar.HealthList.get(1) != -1)){
+					progressBar2.setValue((int) testCar.getHealth(1));
+					
+				}
+				else
+				{
+					progressBar2.setValue(0);
+				}
+				
+				if(!(testCar.HealthList.get(2) != -1)){
+					progressBar3.setValue((int) testCar.HealthList.get(2));
+					
+				}
+				else
+				{
+					progressBar3.setValue(0);
+				}
+				
+				if(!(testCar.HealthList.get(3) != -1)){
+					progressBar4.setValue(0);
+				}
+				else
+				{
+				progressBar4.setValue((int) testCar.HealthList.get(3));
+				}
+				
+				if(!(testCar.HealthList.get(4) != -1)){
+					progressBar5.setValue(0);
+				}
+				else
+				{
+				progressBar5.setValue((int) testCar.HealthList.get(4));
+				}
+				
+				
 				
 				
 			}
 		});
+		
 		updateCharButton.setBounds(440, 319, 117, 29);
 		frmDndStats.getContentPane().add(updateCharButton);
 		

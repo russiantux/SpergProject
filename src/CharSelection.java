@@ -118,37 +118,7 @@ public class CharSelection extends JDialog {
         contentPanel.add(ManaInput);
         ManaInput.setColumns(10);
 
-        JLabel lblCharacterAdder = new JLabel("Character Adder");
-        lblCharacterAdder.setHorizontalAlignment(SwingConstants.CENTER);
-        lblCharacterAdder.setBounds(10, 8, 106, 16);
-        contentPanel.add(lblCharacterAdder);
-        {
-            JPanel buttonPane = new JPanel();
-            buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-            getContentPane().add(buttonPane, BorderLayout.SOUTH);
-            {
-                JButton okButton = new JButton("OK");
-                okButton.addActionListener(new ActionListener() {
-                	public void actionPerformed(ActionEvent e) {
-                		dispose();
-                	}
-                });
-                okButton.setActionCommand("OK");
-                buttonPane.add(okButton);
-                getRootPane().setDefaultButton(okButton);
-            }
-            {
-                JButton cancelButton = new JButton("Cancel");
-                cancelButton.addActionListener(new ActionListener() {
-                	public void actionPerformed(ActionEvent e) {
-                		dispose();
-                	}
-                });
-                cancelButton.setActionCommand("Cancel");
-                buttonPane.add(cancelButton);
-            }
-        }
-
+       
         stengthInput = new JTextField();
         stengthInput.setText("1");
         stengthInput.setToolTipText("1-10");
@@ -226,63 +196,7 @@ public class CharSelection extends JDialog {
                 
                
                 
-                PrintWriter pr;
-				try {
-					pr = new PrintWriter("saves/char.txt");
-					 for (int i=0; i<5 ; i++)
-		                {
-		                    pr.println(tstCar.CharList.get(i));
-		                    
-		                }
-		                pr.close();
-
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-					
-					JOptionPane.showMessageDialog(contentPanel,
-        				    "error when writing file.",
-        				    "ERROR: CharList maxed out.",
-        				    JOptionPane.ERROR_MESSAGE);
-				}    
-				
-				PrintWriter pr1;
-				try {
-					pr1 = new PrintWriter("saves/health.txt");
-					 for (int i=0; i<5 ; i++)
-		                {
-		                    pr1.println(tstCar.HealthList.get(i));
-		                }
-		                pr1.close();
-
-				} catch (FileNotFoundException e2) {
-					// TODO Auto-generated catch block
-					e2.printStackTrace();
-					
-					JOptionPane.showMessageDialog(contentPanel,
-        				    "error when writing file.",
-        				    "ERROR: CharList maxed out.",
-        				    JOptionPane.ERROR_MESSAGE);
-				}    
-
-				PrintWriter pr2;
-				try {
-					pr2 = new PrintWriter("saves/strength.txt");
-					 for (int i=0; i<5 ; i++)
-		                {
-		                    pr2.println(tstCar.StrengthList.get(i));
-		                }
-		                pr2.close();
-
-				} catch (FileNotFoundException e3) {
-					// TODO Auto-generated catch blocks
-					e3.printStackTrace();
-					
-					JOptionPane.showMessageDialog(contentPanel,
-        				    "error when writing file.",
-        				    "ERROR: CharList maxed out.",
-        				    JOptionPane.ERROR_MESSAGE);
-				}    
+                
                
             }
 
@@ -333,7 +247,96 @@ public class CharSelection extends JDialog {
 		}
         
         
-        
+        JLabel lblCharacterAdder = new JLabel("Character Adder");
+        lblCharacterAdder.setHorizontalAlignment(SwingConstants.CENTER);
+        lblCharacterAdder.setBounds(10, 8, 106, 16);
+        contentPanel.add(lblCharacterAdder);
+        {
+            JPanel buttonPane = new JPanel();
+            buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+            getContentPane().add(buttonPane, BorderLayout.SOUTH);
+            {
+                JButton okButton = new JButton("OK");
+                okButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		
+                		PrintWriter pr;
+        				try {
+        					pr = new PrintWriter("saves/char.txt");
+        					 for (int i=0; i<5 ; i++)
+        		                {
+        		                    pr.println(tstCar.CharList.get(i));
+        		                    
+        		                }
+        		                pr.close();
+
+        				} catch (FileNotFoundException e1) {
+        					// TODO Auto-generated catch block
+        					e1.printStackTrace();
+        					
+        					JOptionPane.showMessageDialog(contentPanel,
+                				    "error when writing file.",
+                				    "ERROR: CharList maxed out.",
+                				    JOptionPane.ERROR_MESSAGE);
+        				}    
+        				
+        				PrintWriter pr1;
+        				try {
+        					pr1 = new PrintWriter("saves/health.txt");
+        					 for (int i=0; i<5 ; i++)
+        		                {
+        		                    pr1.println(tstCar.HealthList.get(i));
+        		                }
+        		                pr1.close();
+
+        				} catch (FileNotFoundException e2) {
+        					// TODO Auto-generated catch block
+        					e2.printStackTrace();
+        					
+        					JOptionPane.showMessageDialog(contentPanel,
+                				    "error when writing file.",
+                				    "ERROR: CharList maxed out.",
+                				    JOptionPane.ERROR_MESSAGE);
+        				}    
+
+        				PrintWriter pr2;
+        				try {
+        					pr2 = new PrintWriter("saves/strength.txt");
+        					 for (int i=0; i<5 ; i++)
+        		                {
+        		                    pr2.println(tstCar.StrengthList.get(i));
+        		                }
+        		                pr2.close();
+
+        				} catch (FileNotFoundException e3) {
+        					// TODO Auto-generated catch blocks
+        					e3.printStackTrace();
+        					
+        					JOptionPane.showMessageDialog(contentPanel,
+                				    "error when writing file.",
+                				    "ERROR: CharList maxed out.",
+                				    JOptionPane.ERROR_MESSAGE);
+        				}    
+        				
+                		dispose();
+                	}
+                });
+                okButton.setActionCommand("OK");
+                buttonPane.add(okButton);
+                getRootPane().setDefaultButton(okButton);
+            }
+            {
+                JButton cancelButton = new JButton("Cancel");
+                cancelButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		dispose();
+                	}
+                });
+                cancelButton.setActionCommand("Cancel");
+                buttonPane.add(cancelButton);
+            }
+        }
+
         
      
         
