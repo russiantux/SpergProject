@@ -1,6 +1,4 @@
-# SpergProject
+# DnDStats
 AP Comp Sci A Project
 
-all the files for some project lul
-
-isaac
+A program where you can use this to keep track of character's HP, and attack damages, and do RNG dice rolls.
